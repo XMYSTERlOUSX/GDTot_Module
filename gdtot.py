@@ -14,14 +14,13 @@ crypt = ""
 def parse_info(res):
     title = re.findall(">(.*?)<\/h5>", res.text)[0]
     info = re.findall('<td\salign="right">(.*?)<\/td>', res.text)
-    parsed_info = {
+    return {
         'error': True,
         'message': 'Link Invalid.',
         'title': title,
         'size': info[0],
-        'date': info[1]
+        'date': info[1],
     }
-    return parsed_info
 
 # ==========================================
 
